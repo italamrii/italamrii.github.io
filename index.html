@@ -1,355 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abdullah Alamri — Full-Stack & AI Systems Engineer</title>
-<meta name="description" content="Portfolio of Abdullah Alamri — full-stack engineer building AI-native systems, from operating systems to AI agents." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0A0E14;
-    --bg-soft:#0D1219;
-    --surface: rgba(20,25,35,0.55);
-    --surface-solid:#141923;
-    --border: rgba(61,214,245,0.14);
-    --border-strong: rgba(61,214,245,0.35);
-    --accent:#3DD6F5;
-    --accent-violet:#8C7BFF;
-    --text:#E9ECF2;
-    --text-muted:#8B93A6;
-    --text-faint:#5B6373;
-    --ok:#4ADE80;
-    --mono:'JetBrains Mono', monospace;
-    --sans:'Manrope', sans-serif;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:
-      radial-gradient(900px 500px at 85% -10%, rgba(140,123,255,0.10), transparent 60%),
-      radial-gradient(1100px 600px at -10% 10%, rgba(61,214,245,0.10), transparent 55%),
-      var(--bg);
-    color:var(--text);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  a{color:inherit; text-decoration:none;}
-  ::selection{background:rgba(61,214,245,0.25); color:#fff;}
-  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdullah Alamri — Software & AI Engineer</title>
+  <meta name="description" content="Portfolio of Abdullah Alamri — Software & AI Engineer building local AI runtimes, AI-native systems, full-stack platforms, and experimental operating systems." />
+  <meta name="theme-color" content="#070A0F" />
 
-  .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
+  <meta property="og:title" content="Abdullah Alamri — Software & AI Engineer" />
+  <meta property="og:description" content="AI systems, local AI runtimes, full-stack platforms, and systems engineering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://italamrii.github.io/" />
 
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky; top:0; z-index:50;
-    backdrop-filter:blur(14px);
-    background:rgba(10,14,20,0.65);
-    border-bottom:1px solid var(--border);
-  }
-  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px;}
-  .logo{font-family:var(--mono); font-size:14px; color:var(--accent); letter-spacing:0.5px;}
-  .logo span{color:var(--text-faint);}
-  .navlinks{display:flex; gap:28px; font-size:13px; font-family:var(--mono); color:var(--text-muted);}
-  .navlinks a{transition:color .2s;}
-  .navlinks a:hover{color:var(--accent);}
-  @media (max-width:640px){ .navlinks{display:none;} }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  /* ---------- HERO / TERMINAL ---------- */
-  .hero{padding:90px 0 60px;}
-  .terminal{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:14px;
-    backdrop-filter:blur(16px);
-    box-shadow:0 20px 60px -20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
-    overflow:hidden;
-  }
-  .term-bar{
-    display:flex; align-items:center; gap:8px;
-    padding:12px 16px;
-    border-bottom:1px solid var(--border);
-    background:rgba(255,255,255,0.02);
-  }
-  .dot{width:11px; height:11px; border-radius:50%;}
-  .dot.r{background:#FF5F57;} .dot.y{background:#FEBC2E;} .dot.g{background:#28C840;}
-  .term-title{margin-left:10px; font-family:var(--mono); font-size:12px; color:var(--text-faint);}
-  .term-body{padding:28px 26px 32px; font-family:var(--mono); font-size:14px;}
-  .term-line{margin-bottom:10px; color:var(--text-muted);}
-  .term-line .prompt{color:var(--accent);}
-  .term-line .path{color:var(--accent-violet);}
-  .out{color:var(--text); white-space:pre-wrap;}
-  .cursor{display:inline-block; width:8px; height:16px; background:var(--accent); vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
-  @keyframes blink{50%{opacity:0;}}
+  <style>
+    :root{
+      --bg:#070A0F;
+      --surface:#0D1219;
+      --surface-2:#111824;
+      --surface-glass:rgba(14,19,28,.74);
+      --border:rgba(145,164,190,.14);
+      --border-strong:rgba(94,225,255,.35);
+      --text:#F4F7FB;
+      --muted:#A3ADBC;
+      --faint:#687386;
+      --cyan:#5EE1FF;
+      --violet:#9E8CFF;
+      --green:#77F2A1;
+      --amber:#FFC56B;
+      --shadow:0 32px 90px rgba(0,0,0,.36);
+      --sans:'Manrope',system-ui,sans-serif;
+      --mono:'JetBrains Mono',ui-monospace,monospace;
+      --radius:20px;
+    }
 
-  .hero-name{
-    font-family:var(--sans); font-weight:800;
-    font-size:clamp(32px, 5.5vw, 52px);
-    line-height:1.1; margin:18px 0 8px;
-    background:linear-gradient(135deg, #fff 30%, var(--accent) 100%);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .hero-role{font-size:17px; color:var(--text-muted); margin-bottom:22px;}
-  .hero-role strong{color:var(--accent); font-weight:600;}
-  .badges{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
-  .badge{
-    font-family:var(--mono); font-size:12px; color:var(--text-muted);
-    border:1px solid var(--border); padding:5px 11px; border-radius:999px;
-  }
-  .cta-row{display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;}
-  .btn{
-    font-family:var(--mono); font-size:13px; padding:11px 20px; border-radius:9px;
-    border:1px solid var(--border-strong); transition:all .2s;
-  }
-  .btn-primary{background:var(--accent); color:#031018; border-color:var(--accent); font-weight:700;}
-  .btn-primary:hover{box-shadow:0 0 24px rgba(61,214,245,0.5); transform:translateY(-1px);}
-  .btn-ghost{color:var(--text);}
-  .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
-  .btn-cv{border-color:var(--accent-violet); color:var(--accent-violet);}
-  .btn-cv:hover{border-color:var(--accent-violet); color:#fff; box-shadow:0 0 20px rgba(140,123,255,0.35);}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.65;
+      background:
+        radial-gradient(900px 560px at 15% -10%, rgba(94,225,255,.10), transparent 62%),
+        radial-gradient(800px 520px at 92% 4%, rgba(158,140,255,.10), transparent 58%),
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+        var(--bg);
+      background-size:auto,auto,42px 42px,42px 42px,auto;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
 
-  /* ---------- SECTION LABELS ---------- */
-  .section{padding:50px 0;}
-  .sec-label{
-    font-family:var(--mono); font-size:12px; color:var(--accent);
-    letter-spacing:2px; text-transform:uppercase; margin-bottom:6px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .sec-label::before{content:''; width:18px; height:1px; background:var(--accent);}
-  .sec-title{font-size:24px; font-weight:700; margin-bottom:28px;}
+    a{color:inherit;text-decoration:none}
+    button,a{touch-action:manipulation}
+    ::selection{background:rgba(94,225,255,.22);color:#fff}
+    :focus-visible{outline:2px solid var(--cyan);outline-offset:4px;border-radius:8px}
 
-  /* ---------- STACK ---------- */
-  .stack-grid{display:flex; flex-wrap:wrap; gap:10px;}
-  .chip{
-    font-family:var(--mono); font-size:13px; padding:9px 16px;
-    background:var(--surface); border:1px solid var(--border); border-radius:8px;
-    color:var(--text-muted); transition:all .2s;
-  }
-  .chip:hover{border-color:var(--border-strong); color:var(--text); transform:translateY(-2px);}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    .mono{font-family:var(--mono)}
+    .muted{color:var(--muted)}
 
-  /* ---------- PROCESSES / PROJECTS ---------- */
-  .proc-table-head{
-    display:grid; grid-template-columns:64px 1fr 90px;
-    font-family:var(--mono); font-size:11px; color:var(--text-faint);
-    text-transform:uppercase; letter-spacing:1px; padding:0 20px 10px;
-  }
-  @media (max-width:640px){ .proc-table-head{display:none;} }
+    nav{
+      position:sticky;top:0;z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(7,10,15,.72);
+      backdrop-filter:blur(18px);
+    }
+    .nav-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.3px}
+    .brand span{color:var(--cyan)}
+    .nav-links{display:flex;align-items:center;gap:26px;color:var(--muted);font:500 12px var(--mono)}
+    .nav-links a{transition:.2s ease}
+    .nav-links a:hover{color:var(--cyan)}
+    .nav-cta{
+      padding:8px 12px;border:1px solid var(--border);border-radius:10px;color:var(--text)!important;
+      background:rgba(255,255,255,.025)
+    }
 
-  .proc{
-    background:var(--surface); border:1px solid var(--border); border-radius:12px;
-    backdrop-filter:blur(12px); margin-bottom:12px; overflow:hidden;
-    transition:border-color .25s, transform .25s;
-  }
-  .proc:hover{border-color:var(--border-strong); transform:translateX(3px);}
-  .proc-head{
-    display:grid; grid-template-columns:64px 1fr 90px; align-items:center;
-    padding:16px 20px; cursor:pointer; gap:10px;
-  }
-  @media (max-width:640px){ .proc-head{grid-template-columns:50px 1fr; } .proc-status{display:none;} }
-  .pid{font-family:var(--mono); font-size:12px; color:var(--text-faint);}
-  .proc-name{display:flex; align-items:center; gap:10px; font-weight:700; font-size:15px;}
-  .status-dot{width:8px; height:8px; border-radius:50%; background:var(--ok); box-shadow:0 0 8px var(--ok); flex-shrink:0;
-    animation:pulse 2s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.4;}}
-  .proc-status{font-family:var(--mono); font-size:11px; color:var(--ok); text-align:right;}
-  .proc-body{padding:0 20px 18px 84px; color:var(--text-muted); font-size:14px;}
-  @media (max-width:640px){ .proc-body{padding-left:20px;} }
-  .proc-tags{display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 6px;}
-  .tag{font-family:var(--mono); font-size:11px; padding:3px 9px; border-radius:5px; background:rgba(61,214,245,0.08); color:var(--accent); border:1px solid rgba(61,214,245,0.18);}
-  .proc-link{font-family:var(--mono); font-size:12.5px; color:var(--accent); display:inline-flex; align-items:center; gap:5px; margin-top:8px;}
-  .proc-link:hover{text-decoration:underline;}
+    .hero{padding:88px 0 64px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;
+      color:var(--cyan);font:600 12px var(--mono);letter-spacing:1.3px;text-transform:uppercase
+    }
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.75fr);gap:54px;align-items:end}
+    h1{
+      max-width:880px;font-size:clamp(46px,7vw,86px);line-height:.98;letter-spacing:-3.2px;font-weight:800
+    }
+    .hero-gradient{
+      background:linear-gradient(120deg,#fff 8%,#c9f6ff 48%,#ad9dff 94%);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero-copy{margin-top:26px;max-width:780px;color:var(--muted);font-size:clamp(17px,1.7vw,20px)}
+    .hero-copy strong{color:var(--text);font-weight:650}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:45px;padding:0 17px;border-radius:11px;border:1px solid var(--border);
+      font:600 12px var(--mono);transition:.22s ease;background:rgba(255,255,255,.025)
+    }
+    .btn:hover{transform:translateY(-2px);border-color:var(--border-strong)}
+    .btn-primary{background:var(--cyan);border-color:var(--cyan);color:#031016}
+    .btn-primary:hover{box-shadow:0 0 30px rgba(94,225,255,.22)}
+    .hero-panel{
+      padding:20px;border:1px solid var(--border);border-radius:18px;background:var(--surface-glass);
+      box-shadow:var(--shadow)
+    }
+    .panel-top{display:flex;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--border);font:500 11px var(--mono);color:var(--faint)}
+    .panel-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);margin-right:7px}
+    .terminal-lines{padding-top:16px;font:500 12px/1.85 var(--mono)}
+    .prompt{color:var(--cyan)}
+    .terminal-lines .output{color:var(--muted)}
+    .terminal-lines .accent{color:var(--violet)}
 
-  /* ---------- FOOTER ---------- */
-  footer{padding:60px 0 50px; border-top:1px solid var(--border); margin-top:30px;}
-  .foot-term{font-family:var(--mono); font-size:14px; color:var(--text-muted); margin-bottom:24px;}
-  .foot-term .prompt{color:var(--accent);}
-  .foot-links{display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px;}
-  .foot-links a{font-family:var(--mono); font-size:13px; color:var(--text-muted); border:1px solid var(--border); padding:9px 16px; border-radius:8px; transition:all .2s;}
-  .foot-links a:hover{color:var(--accent); border-color:var(--border-strong);}
-  .foot-copy{font-size:12px; color:var(--text-faint); font-family:var(--mono);}
+    .signal-strip{
+      margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);
+      border-radius:16px;background:rgba(255,255,255,.018);overflow:hidden
+    }
+    .signal{padding:20px 22px;border-right:1px solid var(--border)}
+    .signal:last-child{border-right:0}
+    .signal strong{display:block;font:700 17px var(--mono);color:var(--text);margin-bottom:4px}
+    .signal span{font-size:12px;color:var(--faint)}
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
+    section{padding:76px 0}
+    .section-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:30px}
+    .section-kicker{color:var(--cyan);font:600 11px var(--mono);letter-spacing:1.6px;text-transform:uppercase;margin-bottom:8px}
+    h2{font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1.6px}
+    .section-copy{max-width:510px;color:var(--muted);font-size:14px}
+
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .project{
+      position:relative;overflow:hidden;min-height:350px;padding:28px;border:1px solid var(--border);
+      border-radius:var(--radius);background:linear-gradient(160deg,rgba(17,24,36,.88),rgba(10,14,21,.88));
+      transition:.25s ease
+    }
+    .project::after{
+      content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-90px;top:-100px;
+      background:radial-gradient(circle,rgba(94,225,255,.11),transparent 68%);pointer-events:none
+    }
+    .project.violet::after{background:radial-gradient(circle,rgba(158,140,255,.13),transparent 68%)}
+    .project:hover{transform:translateY(-4px);border-color:rgba(94,225,255,.28);box-shadow:0 22px 70px rgba(0,0,0,.24)}
+    .project.featured{grid-column:span 2;min-height:420px}
+    .project-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+    .project-index{font:600 11px var(--mono);color:var(--faint)}
+    .status{font:600 10px var(--mono);letter-spacing:.7px;text-transform:uppercase;padding:6px 9px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+    .status.green{color:var(--green);border-color:rgba(119,242,161,.18)}
+    .status.amber{color:var(--amber);border-color:rgba(255,197,107,.18)}
+    .project h3{font-size:clamp(26px,3vw,40px);line-height:1.08;letter-spacing:-1.2px;margin:46px 0 12px}
+    .project.featured h3{font-size:clamp(36px,5vw,60px);max-width:740px}
+    .project-sub{font:600 11px var(--mono);color:var(--cyan);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+    .project p{color:var(--muted);max-width:750px;font-size:14px}
+    .project.featured p{font-size:16px;max-width:820px}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+    .tag{font:500 10px var(--mono);color:#B9C4D2;padding:6px 8px;border:1px solid var(--border);border-radius:8px;background:rgba(255,255,255,.018)}
+    .project-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px}
+    .project-link{font:600 11px var(--mono);color:var(--text)}
+    .project-link:hover{color:var(--cyan)}
+
+    .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .cap{
+      min-height:210px;padding:22px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.018)
+    }
+    .cap-number{font:600 11px var(--mono);color:var(--violet)}
+    .cap h3{font-size:18px;margin:44px 0 10px}
+    .cap p{color:var(--muted);font-size:13px}
+
+    .stack-shell{
+      display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;padding:18px;border:1px solid var(--border);
+      border-radius:var(--radius);background:rgba(255,255,255,.018)
+    }
+    .stack-intro{padding:18px}
+    .stack-intro p{margin-top:14px;color:var(--muted);font-size:14px}
+    .stack-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .stack-group{padding:18px;border-radius:14px;background:var(--surface);border:1px solid rgba(255,255,255,.05)}
+    .stack-group h3{font:600 11px var(--mono);color:var(--cyan);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+    .stack-group p{font-size:13px;color:#C1CAD6}
+
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px}
+    .about-lead{font-size:clamp(27px,3.5vw,42px);line-height:1.18;letter-spacing:-1.1px}
+    .about-copy p{color:var(--muted);margin-bottom:18px;font-size:15px}
+    .about-note{
+      margin-top:28px;padding:18px;border-left:2px solid var(--violet);background:rgba(158,140,255,.05);
+      color:#C9C4F2;font-size:13px
+    }
+
+    .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .more-card{
+      padding:18px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.015);
+      transition:.2s ease
+    }
+    .more-card:hover{border-color:var(--border-strong);transform:translateY(-2px)}
+    .more-card h3{font-size:15px;margin-bottom:7px}
+    .more-card p{font-size:12px;color:var(--muted)}
+    .more-card .mini-link{display:inline-block;margin-top:14px;color:var(--cyan);font:500 10px var(--mono)}
+
+    .contact-card{
+      position:relative;overflow:hidden;padding:44px;border:1px solid var(--border-strong);border-radius:24px;
+      background:
+        radial-gradient(650px 260px at 20% 0%,rgba(94,225,255,.09),transparent 70%),
+        radial-gradient(520px 250px at 100% 100%,rgba(158,140,255,.10),transparent 72%),
+        var(--surface);
+      box-shadow:var(--shadow)
+    }
+    .contact-card h2{max-width:780px;font-size:clamp(36px,5vw,60px)}
+    .contact-card p{margin-top:16px;max-width:680px;color:var(--muted)}
+    .contact-actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+
+    footer{padding:34px 0 48px;color:var(--faint);font:500 11px var(--mono)}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--border);padding-top:24px}
+    .footer-links{display:flex;gap:16px}
+    .footer-links a:hover{color:var(--cyan)}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:980px){
+      .hero-grid,.stack-shell,.about-grid{grid-template-columns:1fr}
+      .hero-panel{max-width:700px}
+      .signal-strip{grid-template-columns:repeat(2,1fr)}
+      .signal:nth-child(2){border-right:0}
+      .signal:nth-child(-n+2){border-bottom:1px solid var(--border)}
+      .cap-grid{grid-template-columns:repeat(2,1fr)}
+      .more-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width:720px){
+      .wrap{width:min(100% - 26px,1180px)}
+      .nav-links a:not(.nav-cta){display:none}
+      .hero{padding:62px 0 40px}
+      h1{letter-spacing:-2px}
+      .project-grid,.stack-groups,.more-grid{grid-template-columns:1fr}
+      .project.featured{grid-column:span 1}
+      .section-head{display:block}
+      .section-copy{margin-top:14px}
+      .cap-grid{grid-template-columns:1fr}
+      .signal-strip{grid-template-columns:1fr}
+      .signal{border-right:0!important;border-bottom:1px solid var(--border)!important}
+      .signal:last-child{border-bottom:0!important}
+      .contact-card{padding:30px 22px}
+      .footer-inner{display:block}
+      .footer-links{margin-top:12px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Abdullah Alamri",
+    "url":"https://italamrii.github.io/",
+    "sameAs":[
+      "https://github.com/italamrii",
+      "https://www.linkedin.com/in/abdullah-alamrii/"
+    ],
+    "jobTitle":"Software & AI Engineer"
   }
-</style>
+  </script>
 </head>
 <body>
 
 <nav>
-  <div class="wrap">
-    <div class="logo">italamrii<span>.dev</span></div>
-    <div class="navlinks">
-      <a href="#stack">stack</a>
-      <a href="#processes">projects</a>
-      <a href="#contact">contact</a>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span>~/</span>italamrii</a>
+    <div class="nav-links">
+      <a href="#work">work</a>
+      <a href="#capabilities">capabilities</a>
+      <a href="#about">about</a>
+      <a href="#contact" class="nav-cta">contact →</a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="terminal">
-      <div class="term-bar">
-        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <span class="term-title">abdullah@alamri — zsh</span>
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Software & AI Engineer</div>
+          <h1>Building <span class="hero-gradient">AI-native systems</span> from first principles.</h1>
+          <p class="hero-copy">
+            I design and ship ambitious software — from <strong>bare-metal operating systems</strong> and
+            <strong>local AI runtimes</strong> to <strong>full-stack platforms</strong>, automation, and security tooling.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">Explore selected work ↓</a>
+            <a class="btn" href="https://github.com/italamrii" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn" href="https://www.linkedin.com/in/abdullah-alamrii/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn" href="cv.pdf" download>Download CV ↓</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Engineering profile">
+          <div class="panel-top">
+            <span><span class="panel-dot"></span>engineering profile</span>
+            <span>SA / 2026</span>
+          </div>
+          <div class="terminal-lines">
+            <div><span class="prompt">$</span> whoami</div>
+            <div class="output">Abdullah Alamri</div>
+            <div><span class="prompt">$</span> focus --current</div>
+            <div class="output">AI systems · product engineering</div>
+            <div><span class="prompt">$</span> range</div>
+            <div class="output">Rust → Python → TypeScript</div>
+            <div><span class="prompt">$</span> principle</div>
+            <div class="accent">build the system, not just the demo.</div>
+          </div>
+        </aside>
       </div>
-      <div class="term-body">
-        <div class="term-line"><span class="prompt">$</span> whoami</div>
-        <div class="out" style="margin-bottom:16px;">Abdullah Alamri — Full-Stack Engineer, Saudi Arabia</div>
-        <div class="term-line"><span class="prompt">$</span> cat role.txt</div>
-        <div class="out">Founder, Foundry AI<span class="cursor"></span></div>
-      </div>
-    </div>
 
-    <h1 class="hero-name">Building AI-native systems,<br>end to end.</h1>
-    <p class="hero-role">From a bare-metal OS in <strong>Rust</strong> to AI agents in <strong>Python</strong> to product UI in <strong>Next.js</strong> — I design and ship the whole stack.</p>
-
-    <div class="badges">
-      <span class="badge">📍 Saudi Arabia</span>
-      <span class="badge">🏗️ Founder · Foundry AI</span>
-      <span class="badge">🇸🇦 🇬🇧 Bilingual builder</span>
-    </div>
-
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://github.com/italamrii" target="_blank" rel="noopener">View GitHub →</a>
-      <a class="btn btn-ghost" href="mailto:italamrii@gmail.com">Email me</a>
-      <a class="btn btn-ghost btn-cv" href="cv.pdf" download>⬇ Download CV</a>
-    </div>
-  </div>
-</header>
-
-<section class="section" id="stack">
-  <div class="wrap">
-    <div class="sec-label">tech_stack</div>
-    <h2 class="sec-title">What I build with</h2>
-    <div class="stack-grid">
-      <span class="chip">Python</span>
-      <span class="chip">TypeScript</span>
-      <span class="chip">Rust</span>
-      <span class="chip">Next.js / React</span>
-      <span class="chip">FastAPI</span>
-      <span class="chip">Streamlit</span>
-      <span class="chip">PostgreSQL</span>
-      <span class="chip">Prisma</span>
-      <span class="chip">Expo / React Native</span>
-      <span class="chip">OpenAI API</span>
-      <span class="chip">Docker</span>
-      <span class="chip">Clerk Auth</span>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="processes">
-  <div class="wrap">
-    <div class="sec-label">ps --user=italamrii</div>
-    <h2 class="sec-title">Active processes</h2>
-
-    <div class="proc-table-head">
-      <span>PID</span><span>PROCESS</span><span>STATUS</span>
-    </div>
-
-    <!-- Project: CyberPilot AI -->
-    <div class="proc">
-      <div class="proc-head">
-        <span class="pid">001</span>
-        <span class="proc-name"><span class="status-dot"></span>CyberPilot AI</span>
-        <span class="proc-status">● live</span>
-      </div>
-      <div class="proc-body">
-        Enterprise-style AI Security Operations platform for threat investigation, MITRE ATT&CK mapping, incident response, and executive reporting.
-        <div class="proc-tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">OpenAI</span><span class="tag">SQLite</span><span class="tag">Plotly</span></div>
-        <a class="proc-link" href="https://github.com/italamrii/CyberPilot-AI" target="_blank" rel="noopener">github.com/italamrii/CyberPilot-AI ↗</a>
+      <div class="signal-strip reveal">
+        <div class="signal"><strong>Systems</strong><span>OS, runtimes, architecture</span></div>
+        <div class="signal"><strong>AI</strong><span>Local inference & LLM products</span></div>
+        <div class="signal"><strong>Full-stack</strong><span>Web platforms & APIs</span></div>
+        <div class="signal"><strong>Arabic-first</strong><span>RTL products for real users</span></div>
       </div>
     </div>
+  </header>
 
-    <!-- Project: ArabArenaAI -->
-    <div class="proc">
-      <div class="proc-head">
-        <span class="pid">002</span>
-        <span class="proc-name"><span class="status-dot"></span>ArabArenaAI</span>
-        <span class="proc-status">● live</span>
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Selected work</div>
+          <h2>Projects that show the range.</h2>
+        </div>
+        <p class="section-copy">A curated set of projects chosen for technical depth, product thinking, and breadth — not a dump of every repository.</p>
       </div>
-      <div class="proc-body">
-        Arabic-first platform for benchmarking AI models on Arabic prompts, with community preference analytics. Plus a standalone Arabic LLM initiative built for the Gulf.
-        <div class="proc-tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Python</span></div>
-        <a class="proc-link" href="https://arabarenaai-com.vercel.app" target="_blank" rel="noopener">arabarenaai-com.vercel.app ↗</a>
+
+      <div class="project-grid">
+        <article class="project featured reveal">
+          <div class="project-top">
+            <span class="project-index">01 / SYSTEMS ENGINEERING</span>
+            <span class="status green">v0.5 · experimental</span>
+          </div>
+          <h3>TuwaiqOS</h3>
+          <div class="project-sub">Experimental AI-Native Operating System</div>
+          <p>
+            A bare-metal <code>no_std</code> operating system written in Rust. It boots in QEMU and includes a terminal shell,
+            recoverable persistent storage, preemptive multitasking, loopback networking, program loading, and an AI bridge
+            foundation for future native integration.
+          </p>
+          <div class="tags">
+            <span class="tag">Rust</span><span class="tag">Bare Metal</span><span class="tag">no_std</span>
+            <span class="tag">QEMU</span><span class="tag">Filesystem</span><span class="tag">Task Scheduler</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/italamrii/TuwaiqOS" target="_blank" rel="noopener">View repository ↗</a>
+            <a class="project-link" href="https://github.com/italamrii/TuwaiqOS-Website" target="_blank" rel="noopener">Project website source ↗</a>
+          </div>
+        </article>
+
+        <article class="project featured violet reveal">
+          <div class="project-top">
+            <span class="project-index">02 / LOCAL AI</span>
+            <span class="status green">Windows beta</span>
+          </div>
+          <h3>BRUTE Runtime</h3>
+          <div class="project-sub">Privacy-first local AI runtime</div>
+          <p>
+            A Windows desktop runtime for running GGUF models entirely on-device. BRUTE inspects real CPU, RAM, and GPU
+            capabilities, discovers local models, recommends what actually fits the machine, benchmarks bounded runtime
+            configurations, and auto-tunes execution — with Arabic and English interfaces and no account or telemetry.
+          </p>
+          <div class="tags">
+            <span class="tag">Rust</span><span class="tag">Tauri</span><span class="tag">llama.cpp</span>
+            <span class="tag">GGUF</span><span class="tag">Hardware Detection</span><span class="tag">Local AI</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/italamrii/brute-runtime" target="_blank" rel="noopener">View repository ↗</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-top">
+            <span class="project-index">03 / PLATFORM</span>
+            <span class="status amber">active development</span>
+          </div>
+          <h3>Strategy & Execution Clinic</h3>
+          <div class="project-sub">Arabic-first professional platform</div>
+          <p>
+            A bilingual membership, volunteering, credentialing, recognition, and administration platform with OTP sign-in,
+            RBAC, QR credentials, public profiles, approval workflows, and PostgreSQL-backed domain modeling.
+          </p>
+          <div class="tags">
+            <span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span>
+            <span class="tag">PostgreSQL</span><span class="tag">Drizzle</span><span class="tag">next-intl</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/italamrii/strategy-execution-clinic" target="_blank" rel="noopener">View repository ↗</a>
+          </div>
+        </article>
+
+        <article class="project violet reveal">
+          <div class="project-top">
+            <span class="project-index">04 / AI PRODUCT</span>
+            <span class="status">beta</span>
+          </div>
+          <h3>Foundry AI</h3>
+          <div class="project-sub">Idea → execution blueprint</div>
+          <p>
+            An AI-powered product execution tool that turns raw ideas into structured plans: opportunity and risk analysis,
+            MVP scope, architecture, database/API direction, pricing, and go-to-market thinking.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">OpenAI API</span><span class="tag">SQLite</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/italamrii/foundry-ai" target="_blank" rel="noopener">View repository ↗</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-top">
+            <span class="project-index">05 / ARABIC AI</span>
+            <span class="status">in development</span>
+          </div>
+          <h3>ArabArenaAI</h3>
+          <div class="project-sub">Arabic-first AI evaluation</div>
+          <p>
+            A platform for evaluating and comparing AI models using Arabic prompts and community preference signals,
+            with separated frontend, backend, database, API, deployment, and observability concerns.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/italamrii/arabarenaai.com" target="_blank" rel="noopener">View repository ↗</a>
+          </div>
+        </article>
+
+        <article class="project violet reveal">
+          <div class="project-top">
+            <span class="project-index">06 / SECURITY AI</span>
+            <span class="status">prototype</span>
+          </div>
+          <h3>CyberPilot AI</h3>
+          <div class="project-sub">AI-assisted security operations</div>
+          <p>
+            A security incident analysis platform for threat classification, MITRE ATT&CK mapping, IOC extraction,
+            root-cause analysis, dashboards, executive summaries, and report generation.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">OpenAI</span>
+            <span class="tag">SQLite</span><span class="tag">Pandas</span><span class="tag">Plotly</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/italamrii/CyberPilot-AI" target="_blank" rel="noopener">View repository ↗</a>
+          </div>
+        </article>
       </div>
     </div>
+  </section>
 
-    <!-- Project: Foundry AI -->
-    <div class="proc">
-      <div class="proc-head">
-        <span class="pid">003</span>
-        <span class="proc-name"><span class="status-dot"></span>Foundry AI</span>
-        <span class="proc-status">● live</span>
+  <section id="capabilities">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Engineering range</div>
+          <h2>What I can take ownership of.</h2>
+        </div>
       </div>
-      <div class="proc-body">
-        AI-powered startup execution platform that evaluates raw ideas like a founder, investor, and operator — producing founder verdicts, market intelligence, and product blueprints.
-        <div class="proc-tags"><span class="tag">Python</span><span class="tag">OpenAI</span></div>
-        <a class="proc-link" href="https://github.com/italamrii/foundry-ai" target="_blank" rel="noopener">github.com/italamrii/foundry-ai ↗</a>
+
+      <div class="cap-grid">
+        <div class="cap reveal">
+          <span class="cap-number">01</span>
+          <h3>AI Systems</h3>
+          <p>LLM integrations, local inference, AI workflows, agents, evaluation, and Arabic-first AI products.</p>
+        </div>
+        <div class="cap reveal">
+          <span class="cap-number">02</span>
+          <h3>Product Engineering</h3>
+          <p>Full-stack platforms, dashboards, APIs, authentication, workflows, data models, and production-minded UX.</p>
+        </div>
+        <div class="cap reveal">
+          <span class="cap-number">03</span>
+          <h3>Systems Engineering</h3>
+          <p>Rust, low-level architecture, operating-system experiments, performance-aware software, and runtime design.</p>
+        </div>
+        <div class="cap reveal">
+          <span class="cap-number">04</span>
+          <h3>Security & Reliability</h3>
+          <p>RBAC, threat modeling, secure defaults, testable architecture, operational documentation, and incident tooling.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Project: Qaddha -->
-    <div class="proc">
-      <div class="proc-head">
-        <span class="pid">004</span>
-        <span class="proc-name"><span class="status-dot"></span>قدّها · Qaddha</span>
-        <span class="proc-status">● live</span>
-      </div>
-      <div class="proc-body">
-        Budget-first food & coffee discovery app for a Saudi-native audience — tell it your budget, it tells you what you can order.
-        <div class="proc-tags"><span class="tag">Expo</span><span class="tag">Next.js</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span></div>
-        <a class="proc-link" href="https://github.com/italamrii/Qaddha" target="_blank" rel="noopener">github.com/italamrii/Qaddha ↗</a>
+  <section id="stack">
+    <div class="wrap">
+      <div class="stack-shell reveal">
+        <div class="stack-intro">
+          <div class="section-kicker">Stack</div>
+          <h2>Tools follow the problem.</h2>
+          <p>I work across the stack and choose technologies based on the product, runtime, and operational constraints — not a fixed template.</p>
+        </div>
+        <div class="stack-groups">
+          <div class="stack-group">
+            <h3>Languages</h3>
+            <p>Rust · Python · TypeScript · JavaScript · SQL</p>
+          </div>
+          <div class="stack-group">
+            <h3>Product</h3>
+            <p>React · Next.js · Tailwind CSS · PySide6 · Tauri</p>
+          </div>
+          <div class="stack-group">
+            <h3>Backend & Data</h3>
+            <p>Node.js · REST APIs · PostgreSQL · SQLite · Drizzle</p>
+          </div>
+          <div class="stack-group">
+            <h3>AI & Infra</h3>
+            <p>OpenAI APIs · GGUF · llama.cpp · Docker · GitHub · Railway · Vercel</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Project: PlanetMe -->
-    <div class="proc">
-      <div class="proc-head">
-        <span class="pid">005</span>
-        <span class="proc-name"><span class="status-dot"></span>PlanetMe</span>
-        <span class="proc-status">● live</span>
-      </div>
-      <div class="proc-body">
-        An AI-powered personal page — a smarter alternative to Linktree that introduces you and answers questions using AI.
-        <div class="proc-tags"><span class="tag">Next.js 15</span><span class="tag">Clerk</span><span class="tag">OpenAI</span><span class="tag">Prisma</span></div>
-        <a class="proc-link" href="https://github.com/italamrii/planetme" target="_blank" rel="noopener">github.com/italamrii/planetme ↗</a>
-      </div>
-    </div>
-
-    <!-- Project: TuwaiqOS -->
-    <div class="proc">
-      <div class="proc-head">
-        <span class="pid">006</span>
-        <span class="proc-name"><span class="status-dot"></span>TuwaiqOS</span>
-        <span class="proc-status">● live</span>
-      </div>
-      <div class="proc-body">
-        Experimental AI-native operating system written in Rust — bare-metal, boots in QEMU, with its own filesystem, shell, and cooperative multitasking.
-        <div class="proc-tags"><span class="tag">Rust</span><span class="tag">no_std</span><span class="tag">QEMU</span></div>
-        <a class="proc-link" href="https://github.com/italamrii/TuwaiqOS" target="_blank" rel="noopener">github.com/italamrii/TuwaiqOS ↗</a>
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid reveal">
+        <div>
+          <div class="section-kicker">About</div>
+          <p class="about-lead">I like projects where product thinking and deep engineering meet.</p>
+        </div>
+        <div class="about-copy">
+          <p>
+            I'm Abdullah Alamri, a Software & AI Engineer focused on turning ambitious technical ideas into working systems.
+            My projects span low-level software, desktop AI, web platforms, automation, and security tooling.
+          </p>
+          <p>
+            I care about architecture, usability, and honest engineering claims. A prototype should be called a prototype;
+            a release should be verifiable; and a system should be understandable beyond the demo.
+          </p>
+          <div class="about-note">
+            Current direction: exploring software where AI is part of the architecture itself — not simply another API call bolted onto the product.
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section id="more">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">More builds</div>
+          <h2>Additional experiments & products.</h2>
+        </div>
+        <p class="section-copy">The GitHub profile contains more public work across consumer apps, dashboards, automation, and communication tools.</p>
+      </div>
 
-<footer id="contact">
-  <div class="wrap">
-    <div class="sec-label">contact</div>
-    <div class="foot-term"><span class="prompt">$</span> echo $CONTACT<br>Open to freelance, collaborations, and full-stack / AI engineering roles.</div>
-    <div class="foot-links">
-      <a href="https://github.com/italamrii" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:italamrii@gmail.com">italamrii@gmail.com</a>
+      <div class="more-grid">
+        <a class="more-card reveal" href="https://github.com/italamrii/Qaddha" target="_blank" rel="noopener">
+          <h3>Qaddha · قدّها</h3>
+          <p>Saudi-native food and coffee discovery product built around budget-first decisions.</p>
+          <span class="mini-link">repository ↗</span>
+        </a>
+        <a class="more-card reveal" href="https://github.com/italamrii/jazan-initiatives-dashboard" target="_blank" rel="noopener">
+          <h3>Jazan Initiatives Dashboard</h3>
+          <p>A dashboard-oriented project for initiatives and operational visibility.</p>
+          <span class="mini-link">repository ↗</span>
+        </a>
+        <a class="more-card reveal" href="https://github.com/italamrii/whatsapp-commerce-bot-template" target="_blank" rel="noopener">
+          <h3>WhatsApp Commerce Bot</h3>
+          <p>A reusable commerce automation template centered on WhatsApp workflows.</p>
+          <span class="mini-link">repository ↗</span>
+        </a>
+        <a class="more-card reveal" href="https://github.com/italamrii/qmeet" target="_blank" rel="noopener">
+          <h3>QMeet</h3>
+          <p>A public communication and meeting-oriented software project.</p>
+          <span class="mini-link">repository ↗</span>
+        </a>
+        <a class="more-card reveal" href="https://github.com/italamrii/ksa-entry-os" target="_blank" rel="noopener">
+          <h3>KSA Entry OS</h3>
+          <p>A larger public build exploring structured digital entry and workflow concepts.</p>
+          <span class="mini-link">repository ↗</span>
+        </a>
+        <a class="more-card reveal" href="https://github.com/italamrii" target="_blank" rel="noopener">
+          <h3>All repositories</h3>
+          <p>Browse the full public GitHub profile for current work, experiments, and source code.</p>
+          <span class="mini-link">github.com/italamrii ↗</span>
+        </a>
+      </div>
     </div>
-    <div class="foot-copy">© 2026 Abdullah Alamri — built with vanilla HTML/CSS, no framework needed.</div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div class="section-kicker">Contact</div>
+        <h2>Have a difficult product or engineering problem?</h2>
+        <p>I'm open to selected freelance work, collaborations, and Software / AI Engineering opportunities.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:italamrii@gmail.com">italamrii@gmail.com →</a>
+          <a class="btn" href="https://www.linkedin.com/in/abdullah-alamrii/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/italamrii" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year">2026</span> Abdullah Alamri · Software & AI Engineer</span>
+    <div class="footer-links">
+      <a href="#top">top ↑</a>
+      <a href="cv.pdf">cv</a>
+      <a href="https://github.com/italamrii" target="_blank" rel="noopener">github</a>
+    </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  } else {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+</script>
 
 </body>
 </html>
